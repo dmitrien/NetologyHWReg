@@ -1,9 +1,8 @@
-from pprint import pprint
-## Читаем адресную книгу в формате CSV в список contacts_list:
 import csv
 import re
 import operator
 import itertools
+from tools import logger
 
 with open("phonebook_raw.csv", encoding='utf-8') as f:
     rows = csv.reader(f, delimiter=",")
@@ -24,6 +23,7 @@ def read_csv_to_dict():
 
         return contacts_dict
 
+@logger
 def decoding_info_result():
     actual_list = []
     result_list = []
